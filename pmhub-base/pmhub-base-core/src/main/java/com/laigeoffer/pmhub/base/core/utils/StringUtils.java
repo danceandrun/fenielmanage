@@ -291,7 +291,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 判断给定的set列表中是否包含数组array 判断给定的数组array中是否包含给定的元素value
      *
-     * @param set   给定的集合
+     * @param collection   给定的集合
      * @param array 给定的数组
      * @return boolean 结果
      */
@@ -523,10 +523,10 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * @param old 老字符串
      * @return {@link String}
      */
-    public static String getCleanNumber(String old){
-        try{
+    public static String getCleanNumber(String old) {
+        try {
             return (new BigDecimal(old)).stripTrailingZeros().toPlainString();
-        }catch (Exception i){
+        } catch (Exception i) {
             return old;
         }
     }
@@ -537,18 +537,14 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * @param str 要判断的value
      * @return 结果
      */
-    public static boolean hasText(String str)
-    {
+    public static boolean hasText(String str) {
         return (str != null && !str.isEmpty() && containsText(str));
     }
 
-    private static boolean containsText(CharSequence str)
-    {
+    private static boolean containsText(CharSequence str) {
         int strLen = str.length();
-        for (int i = 0; i < strLen; i++)
-        {
-            if (!Character.isWhitespace(str.charAt(i)))
-            {
+        for (int i = 0; i < strLen; i++) {
+            if (!Character.isWhitespace(str.charAt(i))) {
                 return true;
             }
         }
