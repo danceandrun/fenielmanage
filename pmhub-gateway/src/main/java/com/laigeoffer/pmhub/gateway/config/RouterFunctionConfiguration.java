@@ -15,15 +15,13 @@ import org.springframework.web.reactive.function.server.RouterFunctions;
  * @author canghe
  */
 @Configuration
-public class RouterFunctionConfiguration
-{
+public class RouterFunctionConfiguration {
     @Autowired
     private ValidateCodeHandler validateCodeHandler;
 
     @SuppressWarnings("rawtypes")
     @Bean
-    public RouterFunction routerFunction()
-    {
+    public RouterFunction routerFunction() {
         return RouterFunctions.route(
                 RequestPredicates.GET("/code").and(RequestPredicates.accept(MediaType.TEXT_PLAIN)),
                 validateCodeHandler);

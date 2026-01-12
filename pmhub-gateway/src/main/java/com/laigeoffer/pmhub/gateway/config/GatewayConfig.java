@@ -13,12 +13,10 @@ import org.springframework.core.annotation.Order;
  * @author canghe
  */
 @Configuration
-public class GatewayConfig
-{
+public class GatewayConfig {
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
-    public SentinelFallbackHandler sentinelGatewayExceptionHandler()
-    {
+    public SentinelFallbackHandler sentinelGatewayExceptionHandler() {
         return new SentinelFallbackHandler();
     }
 }

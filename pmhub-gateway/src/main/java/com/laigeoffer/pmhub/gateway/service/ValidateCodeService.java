@@ -11,8 +11,7 @@ import java.io.IOException;
  *
  * @author canghe
  */
-public interface ValidateCodeService
-{
+public interface ValidateCodeService {
     /**
      * 生成验证码
      */

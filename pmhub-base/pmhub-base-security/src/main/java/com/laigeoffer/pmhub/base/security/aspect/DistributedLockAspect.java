@@ -61,7 +61,7 @@ public class DistributedLockAspect {
         try {
             // 加锁，tryLok = true,并且tryTime > 0时，尝试获取锁，获取不到超时异常
             if (distributedLock.tryLok()) {
-                if(distributedLock.tryTime() <= 0){
+                if (distributedLock.tryTime() <= 0) {
                     throw new UtilException("tryTime must be greater than 0");
                 }
                 lockObj = this.distributedLock.tryLock(lockKey, distributedLock.tryTime(), distributedLock.lockTime(), distributedLock.unit(), distributedLock.fair());
